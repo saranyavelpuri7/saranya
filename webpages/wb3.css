@@ -1,0 +1,30 @@
+a{
+  font-family: inherit;
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: center;
+  color: green;
+  text-decoration:none;
+}
+h2{
+font-family: cursive;
+font-weight: bolder;
+}
+h3{
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+div{
+  background-color:lightblue;
+
+width :800px;
+margin: auto;
+
+}
+body{
+  background-image: url("D:/workspace/images/dec.jpg");
+  margin:auto;
+}
+#one{
+  margin: center;
+}
