@@ -1,0 +1,158 @@
+header {
+    width: 960px;
+    height: 100px;
+    position: fixed;
+    background: #000080;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.topheading {
+    margin-top:35px;
+    font-size: 40px;
+    margin-left: 0px;
+    font-family: 'Montserrat', 'sans-serif';
+    letter-spacing: 5px;
+}
+
+.lin {
+    margin-right: 0px;
+    display: inline;
+    float: right;
+    margin-top: 40px;
+}
+
+.o {
+    width: 960px;
+    height: 400px;
+}
+
+.head1 {
+    font-family: 'Montserrat' 'sans-serif';
+    letter-spacing: 2px;
+    font-weight: 5px;
+    color: green;
+}
+
+.primary {
+    width: 960px;
+    background-image: url(../images/g.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: auto;
+}
+
+.im {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background-image: url(../images/c.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -45px;
+    top: 50px;
+}
+
+.mn {
+    font-family: 'Montserrat', 'sans-serif';
+ font-size: 8px;
+    text-decoration: none;
+    text-align:center;}
+
+div {
+    display: block;
+}
+
+.lin a:hover {
+    text-decoration: none;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.lin a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.d {
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.f {
+    font-family: serif;
+    font-size: 25px;
+}
+
+.p h1 {
+    margin-left: 300px;
+    font-family: 'Montserrat', 'sans-serif';
+    margin-top: 100px;
+}
+
+.l a {
+    color: red;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.l p {
+    font-family: 'sans-serif';
+    font-size: 20px;
+}
+
+.k aside {
+    margin-right: 0px;
+}
+
+.e {
+    float-right: 300px;
+}
+
+.f1 {
+    background: #000080;
+    margin: auto;
+    font-family: 'Montserrat', 'sans-serif';
+    width: 960px;
+    color: white;
+}
+
+.w {
+    width: 30px;
+}
+
+aside {
+    display: inline;
+    text-decoration: none;
+    ;
+}
+
+
+footer{
+	display:inline;
+	background:#000080;
+}
+.ed{
+	text-align:center;
+	color:white;
+	background:#000080;
+}
+.fa{
+	color:white;
+}
+.po a:hover{
+	text-decoration:underline;
+	}
+.f a:hover{
+		text-decoration: none;
+    font-size: 25px;
+    font-family: cursive;
+	}
+    
