@@ -58,9 +58,10 @@ padding:none;
       width:200px;
       height:30px;
    }
-   .navbar-brand{
-     margin:0;
-     }
+  .navbar-brand img{
+ width:180px;
+ height:40px;
+  }
 
    
    .navbar{
@@ -68,11 +69,13 @@ padding:none;
  background:#00bfff;
  color:black;
  text-align:center;
- height:90px;
- padding-top: 40px;
+ height:120px;
+ padding-top: 60px;
  font size:14px;
    }
-
+.nav-collapse{
+   background-color: #d5d5d5;
+}
 #features h3{
 font-family: 'Lobster',cursive;
 }
@@ -158,8 +161,7 @@ font-family: 'Lobster',cursive;
 .page-header h3{
       font-size:40px;
       font-family: 'Lobster',cursive;
-   }
-  
+ }
 #myCarousel{
    padding:-0px;
    margin-top: -0px;
@@ -196,6 +198,16 @@ font-size:19px;
 #moreCourses h3{
    font-family:'Lobster',cursive;
 }
+footer  h5{
+font size:50px;
+font-style:italic;
+padding:10px;
+color:black;
+}
+footer ul{
+list-style: none;
+}
+
 /* --------------------------------------
    Media Queries
    -------------------------------------- */
