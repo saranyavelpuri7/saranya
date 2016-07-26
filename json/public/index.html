@@ -1,0 +1,308 @@
+<html>
+
+<head>
+    <title>search movie</title>
+</head>
+<style>
+
+form{
+    float:left;
+    width:940px;
+}
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+button[type=button] {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+      width:100%;
+}
+
+div {
+    border-radius: 5px;
+}
+
+#container1 {
+    background-color: #f2f2f2;
+    padding: 30px;
+      width:100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #456;
+}
+#container2{
+    margin-top:10px;
+     background-color: #f2f2f2;
+    padding:20px;
+ 
+}
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+th,td{
+    padding:10px;
+    width:500px;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+<meta name="description" content="">
+<!-- Mobile viewport optimized -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Bootstrap CSS -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="includes/css/font-awesome.css">
+<link rel="stylesheet" href="includes/css/font-awesome.min.css">
+
+<body>
+    <h1><center>CRUDE OPERATIONS:</center></h1>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#vie" id="view">Records</a></li>
+      
+    </ul>
+    <div class="container" id="container1">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                    <input type="name" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+            </div>
+            <div class="form-group">
+                
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="Male"> Male
+                    </label>
+                    </div>
+                     <div class="radio">
+                    <label>
+                        <input type="radio" class="radio" name="optionsRadios" id="optionsRadios3" value="Female"> Female
+                    </label>
+                    </div>
+                </div>
+
+       
+            <div class="col-sm-offset-2 col-sm-10">
+                <label for="name" class="col-sm-2 control-label">Email:</label>
+                <div class="col-sm-10">
+                    <input type="name" class="form-control" id="email" placeholder="Enter your emailid">
+                </div>
+            </div>
+            <button type="button" id="btn1" class="btn btn-primary">Add a record</button>
+     
+    </div>
+    </form>
+    
+        <div class="container">
+            <header>
+                <h2> Find </h2>
+                <form class="navbar-form">
+               
+                    <input type="text" class="form-control-12" placeholder="search..." id="n">
+                   
+                   
+                    <button type="button" id="btn" class="btn btn-warning "><span class="glyphicon glyphicon-search"></span></button>  
+                </form>
+            </header>
+        
+           </div>
+            <table id="tabl1" border="black">
+                <thead>
+                    <tr>
+                 <th>id</th>
+                        <th>name</th>
+                        <th>gender</th>
+                        <th>email</th>
+                         <th>delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+            </table>
+       </div>
+        
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+    <script>
+    var gender = '';
+    var name = '';
+    var email = '';
+    var patchData = {};
+    var new_row = '';
+    $("#btn").on('click', function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8080/names?name=" + $('#n').val(),
+            dataType: 'json',
+            success: function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    name = data[i].name;
+                    gender = data[i].gender;
+                    email = data[i].email;
+
+                    $('table').append(
+                        '<tr> <td> ' + id + '</td><td id="na"> ' + name + '</td> <td>' + gender + '</td> <td> ' + email + '</td><td>' +
+                        '<button type="button" id="btn2" class="btn btn-danger" >delete</button>' + '</td><td>' + '<button type="button" id="edit" class="btn btn-warning" >update</button>' + '</td></tr>');
+
+                }
+
+            }
+        });
+    });
+
+    $("#view").on('click', function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:8080/names",
+            dataType: 'json',
+            success: function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    name = data[i].name;
+                    gender = data[i].gender;
+                    email = data[i].email;
+
+                    $('table').append(
+                        '<tr> <td> ' + id + '</td><td id="na"> ' + name + '</td> <td>' + gender + '</td> <td> ' + email + '</td><td>' +
+                        '<button type="button" id="btn2" class="btn btn-danger" >delete</button>' + '</td><td>' + '<button type="button" id="edit" class="btn btn-warning" >update</button>' + '</td></tr>');
+
+                }
+
+            }
+        });
+    });
+    $("#btn1").on('click', function(e) {
+        e.preventDefault();
+        var details = {
+
+            id: $('#id').val(),
+            name: $('#name').val(),
+            gender: $('#optionsRadios2').val(),
+            gender: $('#optionsRadios3').val(),
+            email: $('#email').val(),
+
+        };
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/names",
+
+            dataType: 'json',
+            success: function(list) {
+                if (list) {
+                    alert("New user has been added");
+                    location.reload(true);
+                } else {
+                    alert("Cannot add to list !");
+                }
+            },
+            data: details
+        });
+    });
+
+
+    $("#tabl1").on('click', '#btn2', function() {
+        var a = $('td:first', $(this).parents('tr')).text();
+
+        console.log(a);
+        $(this).closest('tr').remove();
+        $.ajax({
+            method: "DELETE",
+            url: "http://localhost:8080/names/" + a.trim(),
+
+
+            success: function(list) {
+
+                alert("New user has been deleted");
+
+            }
+
+        });
+    });
+   $("#tabl1").on('click', '#edit', function() {
+           var patchIndex = $('td:first', $(this).parents('tr')).text();
+           console.log("Edit Button has been pressed");
+
+           $('btn2').hide();
+           var par = $(this).parent().parent();
+            var name1 = par.children("td:nth-child(2)");
+          
+           var email1 = par.children("td:nth-child(4)");
+        name1.html("<input type='text' id='txtName' value='" + name1.val()  + "'/>");
+         email1.html("<input type='text' id='txtEmail' value='" + email1.val() + "'/>");
+
+           console.log($(txtName).val());
+         
+           console.log($(txtEmail).val());
+
+           console.log("patch index", patchIndex);
+
+         
+           //patchData["Id"] = $();
+
+           $('#edit').click(function() {
+ 
+               patchData["name"] = $(txtName).val();
+               patchData["email"] = $(txtEmail).val();
+            
+ 
+               console.log(patchData["name"], patchData["email"]);
+   
+     
+    
+               
+               $.ajax({
+                   url: 'http://localhost:8080/names/'+patchIndex.trim(),
+                   method: 'PATCH',
+                   data: patchData,
+                   success: function(data) {
+                       alert("Updated Successfully");
+                   },
+                      
+               });
+           });
+           });
+  
+    </script> 
+</body>
+
+</html>
