@@ -1,0 +1,9 @@
+<div layout-xs="100" layout-sm="100" layout-gt-sm="100" layout-align="center center" layout-wrap>
+    <input type="text" class="input" placeholder="Search" ng-model="$ctrl.find" />
+    <md-button class="md-raised" ng-click="$ctrl.search()">search</md-button>
+</div>
+<div>
+About {{$ctrl.results.length}} Results found.</div>
+<div layout="row">
+   <my-skillcard result=$ctrl.message></my-skillcard>
+</div>
